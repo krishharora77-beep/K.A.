@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Creator</title>
+
+<style>
+
+body{
+margin:0;
+padding:0;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+font-family:Arial;
+background:white;
+overflow:hidden;
+}
+
+#runBtn{
+position:absolute;
+font-size:28px;
+padding:20px 40px;
+background:#4c6ef5;
+color:white;
+border:none;
+border-radius:12px;
+cursor:pointer;
+}
+
+marquee{
+position:absolute;
+bottom:0;
+width:100%;
+background:#f5e6b3;
+padding:15px;
+font-size:20px;
+}
+
+a{
+color:blue;
+text-decoration:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<button id="runBtn">
+Click here to submit a Thanks
+</button>
+
+<marquee>
+Sorry for this inconvenience... If you're curious to know the reason for this 
+<a href="reason.html">click here...</a>
+</marquee>
+
+<script>
+
+const btn = document.getElementById("runBtn");
+
+btn.addEventListener("mouseover",function(){
+
+const x = Math.random() * (window.innerWidth - 200);
+const y = Math.random() * (window.innerHeight - 100);
+
+btn.style.left = x + "px";
+btn.style.top = y + "px";
+
+});
+
+</script>
+
+</body>
+
+</html>

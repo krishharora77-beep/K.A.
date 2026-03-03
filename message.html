@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Message</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+body{
+margin:0;
+padding:0;
+font-family:Arial;
+text-align:center;
+background:#f4f8ff;
+overflow:hidden;
+}
+
+.container{
+width:100%;
+padding-top:80px;
+}
+
+#robot{
+width:200px;
+animation:float 2s infinite ease-in-out;
+}
+
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-12px)}
+100%{transform:translateY(0)}
+}
+
+h2{
+font-size:32px;
+}
+
+button{
+font-size:22px;
+padding:16px 30px;
+margin-top:20px;
+border:none;
+border-radius:10px;
+background:#4c6ef5;
+color:white;
+cursor:pointer;
+}
+
+#message{
+font-size:40px;
+margin-top:30px;
+color:#ff4d6d;
+font-weight:bold;
+}
+
+.confetti{
+position:fixed;
+top:-20px;
+font-size:22px;
+animation:fall linear forwards;
+}
+
+@keyframes fall{
+0%{transform:translateY(-20px)}
+100%{transform:translateY(110vh)}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<img id="robot" src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png">
+
+<h2>HEY 👋! I've got a message for you...</h2>
+
+<button onclick="showMessage()">Go for it</button>
+
+<div id="message"></div>
+
+</div>
+
+<script>
+
+function showMessage(){
+
+document.getElementById("message").innerHTML =
+"MOYE MOYE🤣";
+
+blast();
+
+setInterval(confetti,120);
+
+}
+
+function blast(){
+for(let i=0;i<120;i++){
+confetti();
+}
+}
+
+function confetti(){
+
+let c=document.createElement("div");
+
+c.className="confetti";
+
+let items=["💚","💖","💗","💛","💙"];
+
+c.innerHTML=items[Math.floor(Math.random()*items.length)];
+
+c.style.left=Math.random()*100+"vw";
+
+c.style.animationDuration=(Math.random()*3+3)+"s";
+
+document.body.appendChild(c);
+
+setTimeout(()=>{c.remove();},6000);
+
+}
+
+</script>
+
+</body>
+</html>
